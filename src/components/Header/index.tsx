@@ -4,14 +4,18 @@ import {ThemeContext} from 'styled-components'
 
 import {Container} from './styles'
 
-const Header: React.FC = () =>{
+interface Props{
+    toggleTheme(): void
+}
+
+const Header: React.FC <Props> = ({toggleTheme}) =>{
     const { colors } = useContext(ThemeContext)
     return (
 
         <Container>
             Hello World
             <Switch
-            onChange={() => {}}
+            onChange={toggleTheme}
             checked={false}
             checkedIcon={false}
             uncheckedIcon={false}

@@ -9,20 +9,20 @@ interface Props{
 }
 
 const Header: React.FC <Props> = ({toggleTheme}) =>{
-    const { colors } = useContext(ThemeContext)
+    const { colors, title } = useContext(ThemeContext)
     return (
 
         <Container>
             Hello World
             <Switch
             onChange={toggleTheme}
-            checked={false}
+            checked={title === 'light'}
             checkedIcon={false}
             uncheckedIcon={false}
             width={40}
             height={10}
             handleDiameter={20}
-            offColor=""
+            offColor={colors.primary}
             onColor={colors.secundary}
             />
         </Container>
